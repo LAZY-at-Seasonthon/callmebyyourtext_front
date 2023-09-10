@@ -1,54 +1,27 @@
-![header](https://capsule-render.vercel.app/api?type=waving&color=0D87AD&height=250&section=header&text=Call%20me%20by%20your%20TEXT&fontSize=60&animation=fadeIn&fontAlignY=32&desc=From%20TEAM%20`LAZY`&descAlignY=51&descAlign=70)
+# React + TypeScript + Vite
 
-# **질문으로 나를 더 알아가는 방법, *Call me by your TEXT***
-> ver 1.0.1
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-<table>
-<tr>
-<td align="center">
-  
-### Front-End
+Currently, two official plugins are available:
 
-<img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=white">
-<img src="https://img.shields.io/badge/Typescript-007ACC?style=for-the-badge&logo=typescript&logoColor=white">
-</td>
-<td align="center">
-  
-### Back-End
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-<img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white">
-</td>
+## Expanding the ESLint configuration
 
-<td>
+If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-### UX·UI
+- Configure the top-level `parserOptions` property like this:
 
-<img src="https://img.shields.io/badge/Figma-ae4dff?style=for-the-badge&logo=figma&logoColor=white">
-</td>
-</tr>
-</table>
+```js
+   parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    project: ['./tsconfig.json', './tsconfig.node.json'],
+    tsconfigRootDir: __dirname,
+   },
+```
 
-
-> 담당 파트 : Mobile WEB Front-End Lead
-
-<hr/>
-
-### 단체 : TEAM_LAZY at Seasonthon
-
-- **Why, Call me by your TEXT?**
-  ```
-  - 포스트 코로나, 오프라인 및 온라인 소통 촉진
-  - 질문을 통한 자아 실현 욕구 충족
-  - 가볍게 접근하고 공유할 수 있는 SNS WEB 서비스의 활성화
-  - 일회성이 아닌 아카이브 가능한 질문 기록 기능
-  ```
-
-<hr/>
-
-### MOBILE WEB UI 디자인
-> Re-building 중...
-
-<hr/>
-
-### 배포 링크
-> https://callmebyyourtext.site/
+- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
+- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
+- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
